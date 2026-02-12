@@ -31,4 +31,19 @@ describe('UnitTestingDemo', () => {
   it('should verify sumOfDigits',() => {
     expect(component.sumOfDigits(125)).toBe(8);
   })
+
+  it('should verify addNewCar',() => {
+    expect(component.cars).toBeDefined();
+    expect(component.cars.length).toBe(2);
+    expect(component.cars).toContain('Tata');
+    expect(component.cars).toContain('Honda');
+    expect(component.cars).not.toContain('BMW');
+    component.addNewCar('Maruti');
+        expect(component.cars.length).toBe(3);
+    expect(component.cars).toContain('Tata');
+    expect(component.cars).toContain('Honda');
+    expect(component.cars).not.toContain('BMW');
+    expect(component.cars).toContain('Maruti');
+
+  })
 });

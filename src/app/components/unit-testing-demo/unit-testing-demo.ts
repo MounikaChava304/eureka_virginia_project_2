@@ -21,4 +21,9 @@ export class UnitTestingDemo {
     return sum;
   }
 
+  cars=['Tata','Honda'];
+  addNewCar(newCar : string){
+    this.cars.push(newCar);
+  }
+
 }
