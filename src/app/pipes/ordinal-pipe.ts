@@ -5,14 +5,27 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class OrdinalPipe implements PipeTransform {
 
-  transform(value: number): string {
-    if (isNaN(value)) {
-      return '';
-    }
-
-    const s = ['th', 'st', 'nd', 'rd'];
-    const v = value % 100;
-    return value + (s[(v - 20) % 10] || s[v % 10] || s[0]);
+ transform(value: number): string {
+  if (isNaN(value)) {
+    return '';
   }
+
+  const v = value % 100;
+
+  if (v >= 11 && v <= 13) {
+    return value + 'th';
+  }
+
+  switch (value % 10) {
+    case 1:
+      return value + 'st';
+    case 2:
+      return value + 'nd';
+    case 3:
+      return value + 'rd';
+    default:
+      return value + 'th';
+  }
+}
 
 }
