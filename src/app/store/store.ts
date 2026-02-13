@@ -3,5 +3,5 @@ import { todoReducer } from "../reducers/todo.reducer";
 
 export const myStore = {
     countReducer: countReducer,
-    todoReducer: todoReducer
+    todoReducer
 }
