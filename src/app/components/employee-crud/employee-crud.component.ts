@@ -24,4 +24,8 @@ employees$: Observable<Employee[]> | undefined;
     fetchAllEmployees(){
       this.store.dispatch(fetchEmployees());
     }
+
+    deleteEmployee(id:string){
+      this.store.dispatch(deleteEmployee({id}));
+    }
 }

@@ -12,6 +12,7 @@
             <td>{{ emp.sal }}</td>
             <td>{{ emp.gender }}</td>
             <td>{{ emp.email }}</td>
+            <td><button class="btn btn-danger" (click)="deleteEmployee(emp.id)">Delete</button></td>
           </tr>
         }
       </tbody>
